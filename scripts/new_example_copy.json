@@ -1,0 +1,12 @@
+[
+	{
+		"address": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+		"earnings": "0x0100",
+		"reasons": "socks,user"
+	},
+	{
+		"address": "0x1f6fe9c9b351824c96e5c7a478c1e52badcbaee0",
+		"earnings": 10,
+		"reasons": "socks,user"
+	}
+]
