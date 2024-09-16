@@ -29,7 +29,8 @@ module.exports = {
     },
     tenderly: {
       chainId: 1,
-      url: `https://rpc.tenderly.co/fork/${process.env.TENDERLY_FORK_ID}`,
+      // url: `https://rpc.tenderly.co/fork/${process.env.TENDERLY_FORK_ID}`,
+      url: `https://virtual.mainnet.rpc.tenderly.co/7cc99d19-3157-4a80-ade3-31da4b152dc4`,
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
     mainnet: {

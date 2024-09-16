@@ -18,3 +18,11 @@ The following assumes the use of `node@>=10`.
 ## Run Tests
 
 `yarn test`
+
+## Generate Merkle Tree
+
+`npx ts-node  scripts/generate-merkle-root.ts -i "input-json-file" -s "seed" -n "number-of-addresses`
+
+## Deploy Merkle distributor
+
+`npx hardhat run scripts/deploy.ts --network tenderly`
