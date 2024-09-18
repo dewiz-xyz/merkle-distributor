@@ -65,7 +65,8 @@ for(let i=0; i < program.num; i++) {
 
 // check again
 if (typeof json !== 'object') throw new Error('Invalid JSON')
-console.log(JSON.stringify(parseBalanceMap(json)))
+const merkleProofs = JSON.stringify(parseBalanceMap(json), null, "\t")
+fs.writeFileSync("merkleProofs.json", merkleProofs, { encoding: 'utf8' });
 
 // update the json with the new addresses
 fs.writeFileSync(program.input, JSON.stringify(json, null, "\t"), { encoding: 'utf8' });
