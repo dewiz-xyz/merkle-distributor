@@ -25,4 +25,18 @@ The following assumes the use of `node@>=10`.
 
 ## Deploy Merkle distributor
 
-`npx hardhat run scripts/deploy.ts --network tenderly`
+First, set-up the configuration variables using Harhad:
+
+`npx hardhat vars set XXX_PRIVATE_KEY`
+
+`npx hardhat vars get XXX_RPC_URL`
+
+Note: Replace `XXX` above with either `TENDERLY` or `ETH` depending on where you want to deploy. This is done in order to be explicit and to avoid mixing keys.
+
+Deploy the `MerkleDistributor` contract:
+ - 1st param: the address of the token to be airdropped
+ - 2nd param: the merkleRoot hash
+ - --network param: can be either `tenderly` or `mainnet`
+
+`npx hardhat deployMerkleDistributor 'tokenAddress' 'merkleHash' --network 'targetNetwork'`
+

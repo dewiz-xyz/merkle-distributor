@@ -36,7 +36,7 @@ module.exports = {
     },
     mainnet: {
       url: vars.has("ETH_RPC_URL") ? vars.get("ETH_RPC_URL") : "",
-      accounts: vars.has("TENDERLY_PRIVATE_KEY") ? [vars.get("TENDERLY_PRIVATE_KEY")] : [],
+      accounts: vars.has("ETH_PRIVATE_KEY") ? [vars.get("ETH_PRIVATE_KEY")] : [],
     },
   },
 }
