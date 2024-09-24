@@ -1,4 +1,4 @@
-require('@nomiclabs/hardhat-ethers')
+import "@nomiclabs/hardhat-ethers";
 
 async function deployMerkleDistributor(tokenAddress, merkleRoot) {
   const MerkleDistributor = await ethers.getContractFactory('MerkleDistributor')
@@ -13,11 +13,10 @@ async function deployMerkleDistributor(tokenAddress, merkleRoot) {
 task("deployMerkleDistributor", "Deploys the Merkle distributor contract")
   .addPositionalParam("tokenAddress", "The airdropped token address")
   .addPositionalParam("merkleRoot", "The merkle root hash")
-  .setAction(async (taskArgs) => {
+  .setAction(async (taskArgs, hre) => {
     await hre.run("compile");
     await deployMerkleDistributor(taskArgs.tokenAddress, taskArgs.merkleRoot).catch(async (error) => {
       console.error(error);
       process.exitCode = 1;
-
   })
 });

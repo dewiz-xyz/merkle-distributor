@@ -57,8 +57,8 @@ console.log("Addresses generated:");
 for(let i=0; i < program.num; i++) {
   const ranNum = getRand() * scalingFactor1 // use a scaling factor because we get a float
   const ranNumBig = BigInt(ranNum); // cast into a BigInt
-  const keccacHash = utils.solidityKeccak256(['uint256'], [ranNumBig]);
-  const slice = keccacHash.slice(0,42); // get the first 20 bytes + the 0x prefix
+  const keccakHash = utils.solidityKeccak256(['uint256'], [ranNumBig]);
+  const slice = keccakHash.slice(0,42); // get the first 20 bytes + the 0x prefix
   json[slice] = "0"; // insert to json; the token amount must be 0
   console.log(slice);
 }

@@ -3,11 +3,10 @@
  */
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-waffle'
-require("./tasks/deployMerkleDistributor");
+import "./tasks/deployMerkleDistributor";
+import { vars } from "hardhat/config";
 
-const { vars } = require("hardhat/config");
-
-module.exports = {
+export default {
   solidity: {
     compilers: [
       {
@@ -30,7 +29,7 @@ module.exports = {
       },
     },
     tenderly: {
-      chainId: 1,
+      chainId: vars.has("TENDERLY_CHAIN_ID") ? vars.get("TENDERLY_CHAIN_ID") : 1,
       url: vars.has("TENDERLY_RPC_URL") ? vars.get("TENDERLY_RPC_URL") : "",
       accounts: vars.has("TENDERLY_PRIVATE_KEY") ? [vars.get("TENDERLY_PRIVATE_KEY")] : [],
     },
