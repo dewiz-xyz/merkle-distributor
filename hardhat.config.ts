@@ -1,9 +1,11 @@
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-require('dotenv').config()
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-waffle'
+require("./tasks/deployMerkleDistributor");
+
+const { vars } = require("hardhat/config");
 
 module.exports = {
   solidity: {
@@ -29,13 +31,12 @@ module.exports = {
     },
     tenderly: {
       chainId: 1,
-      // url: `https://rpc.tenderly.co/fork/${process.env.TENDERLY_FORK_ID}`,
-      url: `https://virtual.mainnet.rpc.tenderly.co/7cc99d19-3157-4a80-ade3-31da4b152dc4`,
-      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      url: vars.has("TENDERLY_RPC_URL") ? vars.get("TENDERLY_RPC_URL") : "",
+      accounts: vars.has("TENDERLY_PRIVATE_KEY") ? [vars.get("TENDERLY_PRIVATE_KEY")] : [],
     },
     mainnet: {
-      url: `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`, // or any other JSON-RPC provider
-      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      url: vars.has("ETH_RPC_URL") ? vars.get("ETH_RPC_URL") : "",
+      accounts: vars.has("TENDERLY_PRIVATE_KEY") ? [vars.get("TENDERLY_PRIVATE_KEY")] : [],
     },
   },
 }
