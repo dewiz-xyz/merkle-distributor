@@ -29,7 +29,7 @@ export default {
       },
     },
     tenderly: {
-      chainId: vars.has("TENDERLY_CHAIN_ID") ? vars.get("TENDERLY_CHAIN_ID") : 1,
+      chainId: vars.has("TENDERLY_CHAIN_ID") ? parseInt(vars.get("TENDERLY_CHAIN_ID")) : 1,
       url: vars.has("TENDERLY_RPC_URL") ? vars.get("TENDERLY_RPC_URL") : "",
       accounts: vars.has("TENDERLY_PRIVATE_KEY") ? [vars.get("TENDERLY_PRIVATE_KEY")] : [],
     },

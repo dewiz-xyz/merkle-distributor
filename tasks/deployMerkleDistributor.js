@@ -1,4 +1,4 @@
-import "@nomiclabs/hardhat-ethers";
+require('@nomiclabs/hardhat-ethers')
 
 async function deployMerkleDistributor(tokenAddress, merkleRoot) {
   const MerkleDistributor = await ethers.getContractFactory('MerkleDistributor')
