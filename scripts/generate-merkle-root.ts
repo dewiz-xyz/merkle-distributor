@@ -15,4 +15,5 @@ const json = JSON.parse(fs.readFileSync(program.input, { encoding: 'utf8' }))
 
 if (typeof json !== 'object') throw new Error('Invalid JSON')
 
-console.log(JSON.stringify(parseBalanceMap(json)))
+const merkleProofs = JSON.stringify(parseBalanceMap(json), null, "\t")
+fs.writeFileSync("merkleProofs.json", merkleProofs, { encoding: 'utf8' });
