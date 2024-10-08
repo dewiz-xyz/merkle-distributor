@@ -12,7 +12,7 @@ export default {
       {
         version: '0.6.11',
         settings: {
-        //   evmVersion: "istanbul",
+          evmVersion: "istanbul",
           optimizer: {
             enabled: true,
             runs: 200,
