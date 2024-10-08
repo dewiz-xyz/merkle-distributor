@@ -2,6 +2,6 @@ artifacts/
 build/
 cache/
 node_modules/
-input.json
+input*.json
 merkleProofs.json
 wrangler.toml

@@ -72,7 +72,7 @@ export function parseBalanceMap(balances: OldFormat | NewFormat[]): MerkleDistri
     const { amount, flags } = dataByAddress[address]
     memo[address] = {
       index,
-      amount: amount.toHexString(),
+      amount: amount.toString(),
       proof: tree.getProof(index, address, amount),
       ...(flags ? { flags } : {}),
     }
@@ -86,7 +86,7 @@ export function parseBalanceMap(balances: OldFormat | NewFormat[]): MerkleDistri
 
   return {
     merkleRoot: tree.getHexRoot(),
-    tokenTotal: tokenTotal.toHexString(),
+    tokenTotal: tokenTotal.toString(),
     claims,
   }
 }
