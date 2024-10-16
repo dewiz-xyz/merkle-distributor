@@ -26,15 +26,17 @@ The following assumes the use of `node@>=10`.
 
 ## Deploy Merkle distributor
 
-First, set-up the configuration variables using Harhad:
+First, set-up the configuration variables using Hardhat:
 
 `npx hardhat vars set XXX_PRIVATE_KEY`
 
 `npx hardhat vars set XXX_RPC_URL`
 
-`npx hardhat vars set TENDERLY_CHAIN_ID`
-
 Note: Replace `XXX` above with either `TENDERLY` or `ETH` depending on where you want to deploy. This is done in order to be explicit and to avoid mixing keys.
+
+If using Tenderly Virtual Testnets, provide the corresponding chain-id:
+
+`npx hardhat vars set TENDERLY_CHAIN_ID`
 
 Deploy the `MerkleDistributor` contract:
  - 1st param: the address of the token to be airdropped
