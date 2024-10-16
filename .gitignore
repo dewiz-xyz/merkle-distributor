@@ -1,3 +1,7 @@
-node_modules/
+artifacts/
 build/
+cache/
+node_modules/
+input*.json
+merkleProofs.json
 wrangler.toml
